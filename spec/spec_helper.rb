@@ -9,9 +9,16 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 RSpec.configure do |config|
-
+  # Dear Cody, I think you accidentally added line 14. Getting rid of this will work now.
+  # Another thing, you can add 'f' infront of 'context'.
+  # config.include Capybara::DSL 
   config.include Rack::Test::Methods
+  config.filter_run_including :focus => true
+  config.run_all_when_everything_filtered = true
+
   DatabaseCleaner.strategy = :truncation
+
+  
 
   config.before do
     DatabaseCleaner.clean
