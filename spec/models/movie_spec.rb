@@ -28,7 +28,7 @@ describe 'Movie' do
       expect(movie.director).to eq("The Wachowski Sisters")
     end
 
-    it 'has a lead actor/actress' do
+   it 'has a lead actor/actress' do
       movie.lead = "Keanu Reeves"
       expect(movie.lead).to eq("Keanu Reeves")
     end
